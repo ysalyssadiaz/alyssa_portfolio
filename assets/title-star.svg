@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2"
+     xmlns="http://www.w3.org/2000/svg"
+     viewBox="-8 -8 123.5 117.85">
+
+  <defs>
+    <style>
+      .fill {
+        fill: url(#linear-gradient);
+      }
+
+      .outline {
+        fill: none;
+        stroke: #009ea4;
+        stroke-width: 16px;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+        stroke-miterlimit: 1;
+      }
+    </style>
+
+    <linearGradient id="linear-gradient"
+      x1="92.51" y1="53.33"
+      x2="-38.21" y2="40.39"
+      gradientUnits="userSpaceOnUse">
+
+      <stop offset=".21" stop-color="#bbdb95"/>
+      <stop offset=".3" stop-color="#add696"/>
+      <stop offset=".47" stop-color="#8bcb98"/>
+      <stop offset=".7" stop-color="#52b99d"/>
+      <stop offset=".98" stop-color="#06a0a3"/>
+      <stop offset="1" stop-color="#009ea4"/>
+    </linearGradient>
+  </defs>
+
+  <g id="work_page">
+
+    <!-- OUTLINE -->
+    <path class="outline"
+      d="M57.26,16.62L78.63,1.35c5.55-3.96,12.93,1.47,10.79,7.95l-8.05,24.35c-.83,2.51.07,5.27,2.22,6.81l20.93,14.96c5.58,3.99,2.76,12.79-4.1,12.79h-26.11c-2.61,0-4.92,1.67-5.73,4.14l-8.15,24.67c-2.13,6.45-11.26,6.45-13.39,0l-8.15-24.67c-.82-2.47-3.13-4.14-5.73-4.14H7.06c-6.86,0-9.68-8.8-4.1-12.79l20.93-14.96c2.15-1.54,3.05-4.3,2.22-6.81l-8.05-24.35c-2.14-6.48,5.25-11.91,10.79-7.95l21.37,15.27c2.1,1.5,4.92,1.5,7.02,0Z"/>
+
+    <!-- FILL -->
+    <path class="fill"
+      d="M57.26,16.62L78.63,1.35c5.55-3.96,12.93,1.47,10.79,7.95l-8.05,24.35c-.83,2.51.07,5.27,2.22,6.81l20.93,14.96c5.58,3.99,2.76,12.79-4.1,12.79h-26.11c-2.61,0-4.92,1.67-5.73,4.14l-8.15,24.67c-2.13,6.45-11.26,6.45-13.39,0l-8.15-24.67c-.82-2.47-3.13-4.14-5.73-4.14H7.06c-6.86,0-9.68-8.8-4.1-12.79l20.93-14.96c2.15-1.54,3.05-4.3,2.22-6.81l-8.05-24.35c-2.14-6.48,5.25-11.91,10.79-7.95l21.37,15.27c2.1,1.5,4.92,1.5,7.02,0Z"/>
+
+  </g>
+</svg>

@@ -1,0 +1,273 @@
+/* =========================
+   ABOUT PAGE
+========================= */
+
+html:has(.about-body) {
+  height: 100%;
+  overflow: hidden;
+}
+
+.about-page {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  background-color: #efefdd;
+  overflow: hidden;
+}
+
+.about-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.about-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  max-width: calc(125rem * var(--site-scale, 1));
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: calc(0.75rem * var(--site-scale, 1)) calc(2rem * var(--site-scale, 1));
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body.about-body {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
+body.about-body .site-footer {
+  flex-shrink: 0;
+}
+
+/* image + copy sit side by side; image column only as wide as the art */
+.about-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: calc(3rem * var(--site-scale, 1));
+  width: fit-content;
+  max-width: 100%;
+  flex: 1;
+  min-height: 0;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+/* left — face & hand */
+.about-visual {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: max-content;
+  height: auto;
+  max-height: min(calc(100dvh - var(--header-offset) - 6rem), calc(46rem * var(--site-scale, 1)));
+}
+
+.about-face {
+  position: relative;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  max-height: min(calc(100dvh - var(--header-offset) - 6rem), calc(46rem * var(--site-scale, 1)));
+  display: block;
+  object-fit: contain;
+}
+
+.about-hand {
+  position: absolute;
+  right: 60%;
+  bottom: 28%;
+  z-index: 2;
+  width: min(40%, calc(27rem * var(--site-scale, 1)));
+  height: auto;
+  display: block;
+}
+
+/* right — title & card */
+.about-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: calc(1rem * var(--site-scale, 1));
+  flex: 0 1 auto;
+  width: min(calc(60rem * var(--site-scale, 1)), 52vw);
+  min-width: min(calc(40rem * var(--site-scale, 1)), 90vw);
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.about-title-wrapper {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.about-title-wrapper .star-icon {
+  height: calc(8.25rem * var(--site-scale, 1));
+  margin-right: calc(-5.75rem * var(--site-scale, 1));
+}
+
+.about-title {
+  margin: 0;
+  background-color: #efefdd;
+  border: calc(8px * var(--site-scale, 1)) solid #009ea4;
+  border-radius: 999px;
+  padding: calc(0.75rem * var(--site-scale, 1)) calc(2rem * var(--site-scale, 1)) calc(0.75rem * var(--site-scale, 1)) calc(5.5rem * var(--site-scale, 1));
+  color: #009ea4;
+  font-family: "Nunito", sans-serif;
+  font-size: calc(4.1rem * var(--site-scale, 1));
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  background-image:
+    linear-gradient(to left, #efefdd 20%, transparent 80%),
+    radial-gradient(#d5e7b4 30%, transparent 50%);
+  background-size: 100% 100%, calc(20px * var(--site-scale, 1)) calc(20px * var(--site-scale, 1));
+  background-repeat: no-repeat, repeat;
+}
+
+.about-card {
+  width: 100%;
+  box-sizing: border-box;
+  border: calc(7px * var(--site-scale, 1)) solid #009ea4;
+  border-radius: calc(3.85rem * var(--site-scale, 1));
+  padding: calc(1.85rem * var(--site-scale, 1)) calc(2.65rem * var(--site-scale, 1));
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #d5e7b4 0,
+    #d5e7b4 1%,
+    #efefdd 72%
+  );
+}
+
+.about-intro {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.9rem * var(--site-scale, 1));
+  width: 100%;
+  max-width: none;
+}
+
+.about-intro p {
+  margin: 0;
+  color: #389a39;
+  font-family: "Nunito", sans-serif;
+  font-size: calc(1.45rem * var(--site-scale, 1));
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.about-cta-heading {
+  margin: calc(1.1rem * var(--site-scale, 1)) 0 calc(1rem * var(--site-scale, 1));
+  color: #009ea4;
+  font-family: "Nunito", sans-serif;
+  font-size: calc(1.95rem * var(--site-scale, 1));
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: lowercase;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(1.25rem * var(--site-scale, 1));
+}
+
+/* matches .work-title pill style (no star) */
+.about-btn {
+  display: inline-block;
+  background-color: #efefdd;
+  border: calc(4px * var(--site-scale, 1)) solid #009ea4;
+  border-radius: 999px;
+  padding: calc(0.45rem * var(--site-scale, 1)) calc(1.1rem * var(--site-scale, 1));
+  color: #009ea4;
+  font-family: "Nunito", sans-serif;
+  font-size: calc(1.6rem * var(--site-scale, 1));
+  font-weight: 750;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease, transform 0.2s ease;
+  background-image:
+    linear-gradient(to left, #efefdd 20%, transparent 80%),
+    radial-gradient(#d5e7b4 30%, transparent 50%);
+  background-size: 100% 100%, calc(10px * var(--site-scale, 1)) calc(10px * var(--site-scale, 1));
+  background-repeat: no-repeat, repeat;
+}
+
+.about-btn:hover {
+  transform: scale(1.05);
+}
+
+.about-btn:focus-visible {
+  outline: 2px solid #009ea4;
+  outline-offset: 0.2rem;
+}
+
+@media (max-width: 900px) {
+  body.about-body {
+    overflow: hidden;
+  }
+
+  .about-layout {
+    flex-direction: column;
+    width: 100%;
+    gap: calc(2rem * var(--site-scale, 1));
+    overflow: hidden;
+  }
+
+  .about-visual {
+    max-height: 48vh;
+  }
+
+  .about-face {
+    max-height: 48vh;
+  }
+
+  .about-main {
+    width: 100%;
+    min-width: 0;
+    align-items: center;
+  }
+
+  .about-title-wrapper {
+    justify-content: center;
+  }
+
+  .about-title {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .about-card {
+    text-align: center;
+  }
+
+  .about-intro {
+    max-width: none;
+  }
+
+  .about-actions {
+    justify-content: center;
+  }
+}
