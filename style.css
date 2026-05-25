@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -375,6 +380,16 @@ p {
 }
 
 /* floating background stars */
+.work-decor,
+.about-decor {
+  transition: opacity 0.2s ease-out;
+}
+
+.work-decor.work-decor--pending,
+.about-decor.work-decor--pending {
+  opacity: 0;
+}
+
 .work-decor {
   position: absolute;
   inset: 0;
@@ -530,40 +545,58 @@ p {
 
 /* --- THE FLOATING LABEL (THE STICKER) --- */
 .project-info-label {
+  /* Fits "REACH UP FOR THE SKY" + subtitle on one line; taglines wrap inside */
+  --project-label-width: calc(43rem * var(--site-scale, 1));
   position: absolute;
   top: calc(-3rem * var(--site-scale, 1));
   left: calc(1rem * var(--site-scale, 1));
+  box-sizing: border-box;
+  width: min(var(--project-label-width), 92%);
+  min-width: min(var(--project-label-width), 92%);
+  max-width: min(var(--project-label-width), 92%);
   background-color: #efefdd;
   border: calc(8px * var(--site-scale, 1)) solid #009ea4;
   border-radius: calc(3.75rem * var(--site-scale, 1));
-  padding: calc(1rem * var(--site-scale, 1)) calc(3rem * var(--site-scale, 1));
+  padding: calc(1rem * var(--site-scale, 1)) calc(4.75rem * var(--site-scale, 1));
   z-index: 10;
-  max-width: min(92%, calc(52rem * var(--site-scale, 1)));
   box-shadow: calc(5px * var(--site-scale, 1)) calc(5px * var(--site-scale, 1)) 0 rgba(0, 0, 0, 0.05);
+  background-image:
+    linear-gradient(to bottom, transparent 15%, #efefdd 75%),
+    radial-gradient(rgba(213, 231, 180, 0.65) 30%, transparent 50%);
+  background-size: 100% 100%, calc(20px * var(--site-scale, 1)) calc(20px * var(--site-scale, 1));
+  background-repeat: no-repeat, repeat;
 }
 
-.project-info-label h3 {
+.project-info-label .project-title {
   color: #009ea4;
   font-family: "Nunito", sans-serif;
-  font-size: calc(2.5rem * var(--site-scale, 1));
+  font-size: calc(2rem * var(--site-scale, 1));
+  font-weight: 700;
+  line-height: 1.1;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: calc(0.5rem * var(--site-scale, 1));
+  white-space: nowrap;
 }
 
-.project-info-label h3 .subtitle {
-  font-size: calc(1.25rem * var(--site-scale, 1));
-  text-transform: uppercase;
+.project-info-label .project-subtitle {
+  margin: calc(0.2rem * var(--site-scale, 1)) 0 0;
+  color: #009ea4;
+  font-family: "Nunito", sans-serif;
+  font-size: calc(1.1rem * var(--site-scale, 1));
+  font-weight: 700;
+  line-height: 1.2;
   letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.project-info-label p {
+.project-info-label .project-tagline {
+  margin: calc(0.35rem * var(--site-scale, 1)) 0 0;
   color: #389a39;
-  font-size: calc(1.25rem * var(--site-scale, 1));
+  font-family: "Nunito", sans-serif;
+  font-size: calc(1.2rem * var(--site-scale, 1));
   font-weight: 600;
-  margin-top: calc(0.25rem * var(--site-scale, 1));
+  line-height: 1.35;
+  width: 100%;
 }
 
 /* --- THE IMAGE --- */

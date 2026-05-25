@@ -9,6 +9,8 @@
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
+  decor.classList.add("work-decor--pending");
+
   function getSiteScale() {
     return Math.max(0.75, Math.min(1.333, window.innerWidth / 1920));
   }
@@ -22,11 +24,12 @@
     return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
   }
 
-  function createStar(index) {
+  function createStar() {
     const el = document.createElement("img");
     el.src = STAR_SRC;
     el.alt = "";
     el.className = "work-star";
+    el.decoding = "async";
 
     const star = {
       el,
@@ -56,9 +59,36 @@
     };
 
     el.style.opacity = String(star.opacity);
-    decor.appendChild(el);
     stars.push(star);
     return star;
+  }
+
+  function updateStarSize(star, scale) {
+    star.radius = (star.sizeRem * scale * remToPx(1)) / 2;
+    star.el.style.width = `${star.sizeRem * scale}rem`;
+  }
+
+  function updateStarMotion(star, t, scale) {
+    star.targetX =
+      star.anchorX + Math.sin(t * star.speedX + star.phaseX) * star.ampX * scale;
+    star.targetY =
+      star.anchorY + Math.sin(t * star.speedY + star.phaseY) * star.ampY * scale;
+    star.rot =
+      star.baseRot +
+      Math.sin(t * star.speedR + star.phaseR) * star.rotAmp * star.spin;
+  }
+
+  function snapStarsToMotion(t) {
+    const scale = getSiteScale();
+    stars.forEach((star) => {
+      updateStarSize(star, scale);
+      updateStarMotion(star, t, scale);
+      star.x = star.targetX;
+      star.y = star.targetY;
+      star.vx = 0;
+      star.vy = 0;
+      renderStar(star);
+    });
   }
 
   function placeStarsWithoutOverlap() {
@@ -66,8 +96,7 @@
     const placed = [];
 
     stars.forEach((star) => {
-      star.radius = (star.sizeRem * scale * remToPx(1)) / 2;
-      star.el.style.width = `${star.sizeRem * scale}rem`;
+      updateStarSize(star, scale);
 
       let positioned = false;
 
@@ -76,8 +105,8 @@
         const y = star.radius + Math.random() * (decorHeight - star.radius * 2);
 
         const overlaps = placed.some((other) => {
-          const dx = x - other.x;
-          const dy = y - other.y;
+          const dx = x - other.anchorX;
+          const dy = y - other.anchorY;
           const minDist = (star.radius + other.radius) * SEPARATION_PADDING;
           return dx * dx + dy * dy < minDist * minDist;
         });
@@ -85,10 +114,6 @@
         if (!overlaps) {
           star.anchorX = x;
           star.anchorY = y;
-          star.x = x;
-          star.y = y;
-          star.vx = 0;
-          star.vy = 0;
           placed.push(star);
           positioned = true;
           break;
@@ -98,8 +123,6 @@
       if (!positioned) {
         star.anchorX = star.radius + Math.random() * (decorWidth - star.radius * 2);
         star.anchorY = star.radius + Math.random() * (decorHeight - star.radius * 2);
-        star.x = star.anchorX;
-        star.y = star.anchorY;
         placed.push(star);
       }
     });
@@ -113,7 +136,7 @@
   function applyLayout() {
     measureDecor();
     placeStarsWithoutOverlap();
-    stars.forEach(renderStar);
+    snapStarsToMotion(lastTime > 0 ? lastTime * 0.001 : 0);
   }
 
   function renderStar(star) {
@@ -121,6 +144,16 @@
     star.el.style.top = `${star.y - star.radius}px`;
     star.el.style.right = "auto";
     star.el.style.transform = `rotate(${star.rot}deg)`;
+  }
+
+  function mountStars() {
+    const fragment = document.createDocumentFragment();
+    stars.forEach((star) => fragment.appendChild(star.el));
+    decor.appendChild(fragment);
+  }
+
+  function revealStars() {
+    decor.classList.remove("work-decor--pending");
   }
 
   function applySeparation(dt) {
@@ -179,13 +212,8 @@
     const damping = 0.88;
 
     stars.forEach((star) => {
-      star.radius = (star.sizeRem * scale * remToPx(1)) / 2;
-      star.el.style.width = `${star.sizeRem * scale}rem`;
-
-      star.targetX =
-        star.anchorX + Math.sin(t * star.speedX + star.phaseX) * star.ampX * scale;
-      star.targetY =
-        star.anchorY + Math.sin(t * star.speedY + star.phaseY) * star.ampY * scale;
+      updateStarSize(star, scale);
+      updateStarMotion(star, t, scale);
 
       star.vx += (star.targetX - star.x) * spring * dt;
       star.vy += (star.targetY - star.y) * spring * dt;
@@ -199,30 +227,42 @@
       star.x += star.vx;
       star.y += star.vy;
       clampToBounds(star);
-
-      star.rot =
-        star.baseRot +
-        Math.sin(t * star.speedR + star.phaseR) * star.rotAmp * star.spin;
-
       renderStar(star);
     });
 
     requestAnimationFrame(tick);
+  }
+
+  function startAnimation() {
+    lastTime = performance.now();
+    requestAnimationFrame(tick);
+  }
+
+  function bootstrap(attempt = 0) {
+    measureDecor();
+
+    if ((decorWidth < 1 || decorHeight < 1) && attempt < 24) {
+      requestAnimationFrame(() => bootstrap(attempt + 1));
+      return;
+    }
+
+    placeStarsWithoutOverlap();
+    snapStarsToMotion(0);
+    mountStars();
+
+    requestAnimationFrame(() => {
+      revealStars();
+      if (!prefersReducedMotion) {
+        startAnimation();
+      }
+    });
   }
 
   for (let i = 0; i < STAR_COUNT; i++) createStar(i);
 
-  applyLayout();
-
-  if (!prefersReducedMotion) {
-    lastTime = performance.now();
-    requestAnimationFrame(tick);
-  } else {
-    stars.forEach((star) => {
-      star.rot = star.baseRot;
-      renderStar(star);
-    });
-  }
+  requestAnimationFrame(() => {
+    requestAnimationFrame(bootstrap);
+  });
 
   let resizeTimer;
   window.addEventListener("resize", () => {
@@ -230,22 +270,16 @@
     resizeTimer = setTimeout(() => {
       const oldW = decorWidth;
       const oldH = decorHeight;
-      const scale = getSiteScale();
+      const t = lastTime > 0 ? lastTime * 0.001 : 0;
 
       measureDecor();
 
-      if (oldW > 0 && oldH > 0) {
+      if (oldW > 0 && oldH > 0 && decorWidth > 0 && decorHeight > 0) {
         stars.forEach((star) => {
           star.anchorX = (star.anchorX / oldW) * decorWidth;
           star.anchorY = (star.anchorY / oldH) * decorHeight;
-          star.x = star.anchorX;
-          star.y = star.anchorY;
-          star.vx = 0;
-          star.vy = 0;
-          star.el.style.width = `${star.sizeRem * scale}rem`;
-          star.radius = (star.sizeRem * scale * remToPx(1)) / 2;
         });
-        stars.forEach(renderStar);
+        snapStarsToMotion(t);
       } else {
         applyLayout();
       }

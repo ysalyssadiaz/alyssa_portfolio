@@ -3,8 +3,7 @@
 ========================= */
 
 html:has(.about-body) {
-  height: 100%;
-  overflow: hidden;
+  min-height: 100%;
 }
 
 .about-page {
@@ -44,9 +43,7 @@ html:has(.about-body) {
 body.about-body {
   display: flex;
   flex-direction: column;
-  height: 100dvh;
-  max-height: 100dvh;
-  overflow: hidden;
+  min-height: 100dvh;
 }
 
 body.about-body .site-footer {
@@ -77,6 +74,8 @@ body.about-body .site-footer {
   width: max-content;
   height: auto;
   max-height: min(calc(100dvh - var(--header-offset) - 6rem), calc(46rem * var(--site-scale, 1)));
+  animation: intro-float 4.8s ease-in-out infinite;
+  animation-delay: -1.5s;
 }
 
 .about-face {
@@ -89,6 +88,21 @@ body.about-body .site-footer {
   object-fit: contain;
 }
 
+@keyframes about-hand-wave {
+  0%, 100% {
+    transform: rotate(-4deg);
+  }
+  25% {
+    transform: rotate(7deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(6deg);
+  }
+}
+
 .about-hand {
   position: absolute;
   right: 60%;
@@ -97,6 +111,15 @@ body.about-body .site-footer {
   width: min(40%, calc(27rem * var(--site-scale, 1)));
   height: auto;
   display: block;
+  transform-origin: 90% 90%;
+  animation: about-hand-wave 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-visual,
+  .about-hand {
+    animation: none;
+  }
 }
 
 /* right — title & card */
@@ -225,10 +248,6 @@ body.about-body .site-footer {
 }
 
 @media (max-width: 900px) {
-  body.about-body {
-    overflow: hidden;
-  }
-
   .about-layout {
     flex-direction: column;
     width: 100%;
