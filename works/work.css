@@ -26,7 +26,8 @@ body {
   --site-ref-w: 1920px;
   --site-scale: clamp(0.75, 100vw / var(--site-ref-w), 1.333);
   --header-offset: calc(5.5rem * var(--site-scale, 1));
-  --work-content-max: min(calc(82rem * var(--site-scale, 1)), 92vw);
+  --work-content-max: min(calc(100rem * var(--site-scale, 1)), 94vw);
+  --work-media-radius: calc(1.25rem * var(--site-scale, 1));
 }
 
 body.work-body {
@@ -182,10 +183,70 @@ body.work-body {
 
 .work-page-content img {
   display: block;
-  width: 100%;
-  max-width: 100%;
+  box-sizing: border-box;
+  width: var(--work-img-width, 100%);
+  max-width: min(100%, var(--work-img-width, 100%));
   height: auto;
+  aspect-ratio: var(--work-img-aspect, auto);
+  object-fit: var(--work-img-fit, fill);
   margin-top: calc(2rem * var(--site-scale, 1));
+  margin-bottom: calc(2.5rem * var(--site-scale, 1));
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--work-media-radius);
+}
+
+.work-section-row {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(1.5rem * var(--site-scale, 1));
+  margin-top: calc(2.5rem * var(--site-scale, 1));
+}
+
+.work-section-text {
+  flex: 1 1 55%;
+  min-width: 0;
+}
+
+.work-section-text h3:first-child {
+  margin-top: 0;
+}
+
+.work-section-media {
+  flex: 1 1 42%;
+  min-width: 0;
+}
+
+.work-section-media img {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .work-section-row {
+    flex-direction: column;
+  }
+
+  .work-section-media img {
+    margin-top: calc(1rem * var(--site-scale, 1));
+  }
+}
+
+.work-image-row {
+  display: flex;
+  gap: calc(1rem * var(--site-scale, 1));
+  margin-top: calc(2rem * var(--site-scale, 1));
+}
+
+.work-image-row img {
+  flex: 1 1 0;
+  min-width: 0;
+  margin-top: 0;
+}
+
+@media (max-width: 640px) {
+  .work-image-row {
+    flex-direction: column;
+  }
 }
 
 /* =========================
@@ -205,9 +266,26 @@ body.work-body {
   margin: 0;
   color: #389a39;
   font-family: "Nunito", sans-serif;
-  font-size: calc(1.45rem * var(--site-scale, 1));
+  font-size: calc(1.2rem * var(--site-scale, 1));
   font-weight: 650;
-  line-height: 1.55;
+  line-height: 1.6;
+}
+
+.work-page-content p + p {
+  margin-top: calc(1.5rem * var(--site-scale, 1));
+}
+
+.work-page-content h3 {
+  margin: calc(2.5rem * var(--site-scale, 1)) 0 0;
+  color: #009ea4;
+  font-family: "Nunito", sans-serif;
+  font-size: calc(1.6rem * var(--site-scale, 1));
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.work-page-content h3:first-of-type {
+  margin-top: calc(2rem * var(--site-scale, 1));
 }
 
 .work-page-content .work-tech {
@@ -266,4 +344,21 @@ body.work-body {
 .work-page-content h2 {
   font-weight: 650;
   font-size: calc(2rem * var(--site-scale, 1));
+}
+
+
+/* 
+-------------elsewhere specific--------------------- */
+.work-page-content img.below-hill {
+  height: calc(30rem * var(--site-scale, 1));
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.work-page-content img.on-hill {
+  height: calc(30rem * var(--site-scale, 1));
+  width: 100%;
+  object-fit: cover;
+  object-position: center 70%;
 }
