@@ -601,20 +601,37 @@ p {
 
 /* --- THE IMAGE --- */
 .project-image-container {
+  position: relative;
   width: 90%;
   height: calc(20rem * var(--site-scale, 1));
   margin: 0 auto;
   overflow: hidden;
   border-radius: calc(5.5rem * var(--site-scale, 1));
-  display: flex;
   border: calc(12px * var(--site-scale, 1)) solid #bbdb95;
 }
 
 .final-render {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  display: block;
+  object-position: center center;
+}
+
+/* Crop via background-position (adjust second value: lower = higher in frame) */
+.project-image-container--makeamockup {
+  background-image: url("assets/homepage/makeamockup.png");
+  background-size: cover;
+  background-position: center 33%;
+  background-repeat: no-repeat;
+}
+
+.project-image-container--spark {
+  background-image: url("assets/homepage/spark.png");
+  background-size: cover;
+  background-position: center 70%;
+  background-repeat: no-repeat;
 }
 
 /* =========================
