@@ -256,7 +256,8 @@ body.work-body {
 }
 
 .work-figure {
-  margin: calc(2rem * var(--site-scale, 1)) auto calc(2.5rem * var(--site-scale, 1));
+  margin: calc(2rem * var(--site-scale, 1)) auto
+    calc(2.5rem * var(--site-scale, 1));
 }
 
 .work-figure img {
@@ -536,7 +537,7 @@ body.work-body {
   margin: 0;
   color: #389a39;
   font-family: "Nunito", sans-serif;
-  font-size: calc(1.2rem * var(--site-scale, 1));
+  font-size: calc(1.3rem * var(--site-scale, 1));
   font-weight: 650;
   line-height: 1.6;
 }
@@ -589,7 +590,8 @@ body.work-body {
   margin-top: auto;
   width: 100%;
   box-sizing: border-box;
-  padding: calc(1.5rem * var(--site-scale, 1)) 0 calc(0.65rem * var(--site-scale, 1));
+  padding: calc(1.5rem * var(--site-scale, 1)) 0
+    calc(0.65rem * var(--site-scale, 1));
   background: linear-gradient(to right, #bbdb95, #009ea4);
 }
 
@@ -709,7 +711,6 @@ body.work-body {
   font-weight: 650;
   font-size: calc(2rem * var(--site-scale, 1));
 }
-
 
 /* 
 -------------elsewhere specific--------------------- */
