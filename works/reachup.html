@@ -26,10 +26,175 @@
       </div>
     </div>
 
-    <div class="work-page-content"></div>
+    <div class="work-page-content">
+      <h2>
+        An Immersive 3D environment exploring how biased AI-generated content can influence children’s ambitions through gendered representation.
+      </h2>
+      <p class="work-tech">
+        <span class="work-tech-label">Made with:</span> Unity • Clip Studio Paint • Photoshop • ChatGPT • C#
+      </p>
+
+      <h3>Overview</h3>
+      <p>
+        Reach Up for the Sky turns the systemic issue of artificial intelligence
+        bias into a space-driven narrative. Experienced through the lens of a
+        young girl, the user climbs a vibrant, stylized tower exploring potential
+        career paths, only to step through a threshold into a bleak, repeating
+        city. The project critiques how the early accessibility of AI content
+        can prematurely restrict a child's worldview, communicating a transition
+        from open-minded potential to a rigid algorithmic loop.
+      </p>
+      <figure class="work-figure work-figure--small">
+        <img
+          src="../assets/work/reachup/reachup-uxmap.png"
+          alt="User experience map"
+        />
+        <figcaption class="work-caption">
+          User Experience Map tracking the shift from weightless childhood
+          ambition to the heavy, oppressive reality of bias
+        </figcaption>
+      </figure>
+
+      <div class="work-section-row work-section-row--media-wide">
+        <div class="work-section-text">
+          <h3>A Blank Canvas</h3>
+          <p>
+            To capture the perspective of a child, the experience begins inside a
+            simple tower rendered with a white, unlit shader. Flattening the
+            geometry and erasing visible edges mimics a
+            child's mind as a blank canvas, being an open, boundless
+            world representing an unrestricted potential to learn and dream.
+          </p>
+          <p>
+            The rooms within the tower depict romanticized
+            workspaces. Rather than using 3D assets, everything was drawn
+            as 2D flats to evoke a childlike imagination. Bright
+            colors, playful particle effects, and comical sound effects reinforce
+            the way children romanticize adulthood, focusing entirely on the
+            positives before real-world limits are introduced.
+          </p>
+        </div>
+        <div class="work-section-media">
+          <div class="work-image-grid">
+            <img
+              src="../assets/work/reachup/infpotential1.png"
+              alt="Infinite potential room 1"
+            />
+            <img
+              src="../assets/work/reachup/infpotential2.png"
+              alt="Infinite potential room 2"
+            />
+            <img
+              src="../assets/work/reachup/infpotential3.png"
+              alt="Infinite potential room 3"
+            />
+            <img
+              src="../assets/work/reachup/infpotential4.png"
+              alt="Infinite potential room 4"
+            />
+          </div>
+        </div>
+      </div>
+
+      <h3>The Threshold</h3>
+      <p>
+        Audio acts as the narrative anchor that destabilizes the user's comfort.
+        Throughout the tower climb, a bright, repetitive, and sparkly background
+        music track lifts the mood.
+      </p>
+      <p>
+        However, upon reaching the fourth floor, the firefighter room, this
+        whimsical atmosphere peaks with a twist. Instead of the sound effects
+        emitting from local props, a fire ambulance siren blares directly from a
+        hand-drawn door. Growing aggressively louder as the user approaches, the
+        audio acts as a thematic warning, using a real-world emergency sound to
+        foreshadow the bias waiting on the other side.
+      </p>
+
+      <h3>Reality Check</h3>
+      <p>
+        Stepping through the door teleports the user to the ground level of a
+        massive city. The upbeat music and urgent sirens immediately cut to dead
+        silence, replaced by the hollow, mechanical hum of an overheating
+        computer. This quiet, stagnant sound establishes the final phase as empty
+        and devoid of the human spirit.
+      </p>
+      <p>
+        Architecturally, the city is built from a boxy, rigid block made of dull
+        flats, duplicated and lined up with its clones. This aggressive repetition
+        creates a deep sense of unnatural discomfort. The hallway-like
+        perspective and thick fog induce a feeling of hopelessness, discouraging
+        exploration and forcing the user's focus up towards the skybox.
+      </p>
+      <img
+        class="above-city"
+        src="../assets/work/reachup/above-city.png"
+        alt="View above the city"
+      />
+      <div class="work-section-row work-section-row--media-wide">
+        <div class="work-section-text">
+          <h3>A Sky So Limiting</h3>
+          <p>
+            The true climax of the space is the skybox, which features an
+            overwhelming, digital collage of women pigeonholed into
+            stereotypical fields. Repeated six times to wrap the entire boundary
+            of the environment, this mosaic locks the user beneath a literal
+            ceiling of systemic data bias.
+          </p>
+          <p>
+            By keeping the player's walking speed identical to the tower phase,
+            traversing the massive, cloned city blocks becomes intentionally
+            strenuous and painfully slow. The boundless potential of the childhood
+            tower is systematically crushed by a rigid grid, physically
+            embodying the claustrophobia of a world shaped by algorithmic bias.
+          </p>
+        </div>
+        <div class="work-section-media work-section-media--fill">
+          <div class="work-media-frame">
+            <img
+              class="walking-gif"
+              src="../assets/work/reachup/walking.gif"
+              alt="Walking through the city"
+            />
+          </div>
+        </div>
+      </div>
+      <img
+        class="sky"
+        src="../assets/work/reachup/sky.png"
+        alt="Limiting skybox collage"
+      />
+    </div>
   </main>
 
   <footer class="site-footer" id="footer">
+    <nav class="work-project-nav" aria-label="Project navigation">
+      <a
+        class="work-project-nav__arrow"
+        href="elsewhere.html"
+        aria-label="Previous project: Elsewhere"
+      >
+        <img
+          src="../assets/arrow.svg"
+          alt=""
+          class="work-project-nav__icon"
+          aria-hidden="true"
+        />
+      </a>
+      <span class="work-project-nav__current">Reach Up for the Sky</span>
+      <a
+        class="work-project-nav__arrow work-project-nav__arrow--next"
+        href="spark.html"
+        aria-label="Next project: Spark"
+      >
+        <img
+          src="../assets/arrow.svg"
+          alt=""
+          class="work-project-nav__icon"
+          aria-hidden="true"
+        />
+      </a>
+    </nav>
     <p>&copy; 2026 Alyssa Diaz. All rights reserved.</p>
   </footer>
 </body>
