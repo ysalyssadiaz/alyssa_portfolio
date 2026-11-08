@@ -1,60 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Alyssa Diaz</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="about.css">
-</head>
-
-<body class="about-body">
-  <header class="header">
-    <nav class="nav" aria-label="Main">
-      <ul>
-        <li><a href="index.html">Work</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="about-page">
-    <div class="about-decor" aria-hidden="true"></div>
-
-    <div class="about-content">
-      <div class="about-layout">
-        <div class="about-visual">
-          <img src="assets/about/about-face.png" alt="" class="about-face">
-          <img src="assets/about/about-hand.png" alt="" class="about-hand">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Alyssa Diaz</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="about-page">
+    <a class="project-back" href="index.html">BACK</a>
+    <div class="about-stars" aria-hidden="true">
+      <img src="Assets/tiny-star.svg" alt="" style="--x: 6%; --y: 12%; --size: 4.2rem; --dx: 18px; --dy: -22px; --rot: -8deg; --dur: 7s; --delay: -1s;" />
+      <img src="Assets/tiny-star.svg" alt="" style="--x: 22%; --y: 70%; --size: 3.1rem; --dx: -16px; --dy: 18px; --rot: 12deg; --dur: 8.5s; --delay: -3s;" />
+      <img src="Assets/tiny-star.svg" alt="" style="--x: 78%; --y: 8%; --size: 3.6rem; --dx: 14px; --dy: 20px; --rot: 6deg; --dur: 6.5s; --delay: -2s;" />
+      <img src="Assets/tiny-star.svg" alt="" style="--x: 90%; --y: 58%; --size: 5rem; --dx: -20px; --dy: -14px; --rot: -14deg; --dur: 9s; --delay: -4s;" />
+      <img src="Assets/tiny-star.svg" alt="" style="--x: 48%; --y: 18%; --size: 2.4rem; --dx: 12px; --dy: 16px; --rot: 20deg; --dur: 7.5s; --delay: -0.5s;" />
+      <img src="Assets/tiny-star.svg" alt="" style="--x: 8%; --y: 84%; --size: 2.8rem; --dx: 16px; --dy: -12px; --rot: 4deg; --dur: 8s; --delay: -5s;" />
+      <img src="Assets/tiny-star.svg" alt="" style="--x: 62%; --y: 82%; --size: 3.4rem; --dx: -12px; --dy: -18px; --rot: -6deg; --dur: 6.8s; --delay: -2.5s;" />
+    </div>
+    <main class="about">
+      <div class="about-visual">
+        <img class="about-head" src="Assets/head.png" alt="Illustrated portrait of Alyssa" />
+        <img class="about-hand" src="Assets/hand.png" alt="" />
+      </div>
+      <div class="about-main">
+        <div class="work-heading-wrap about-title-wrap">
+          <img class="work-heading-star" src="Assets/title-star.svg" alt="" aria-hidden="true" />
+          <h1 class="work-heading about-title">Hey, I'm Alyssa!</h1>
         </div>
-
-        <div class="about-main">
-          <div class="about-title-wrapper">
-            <img src="assets/title-star.svg" class="star-icon" alt="" aria-hidden="true">
-            <h1 class="about-title">Hey, I'm Alyssa!</h1>
+        <div class="about-card">
+          <div class="about-intro">
+            <p>I'm a digital designer with a multidisciplinary approach, doing what I can to build experiences you can't forget.</p>
+            <p>I am driven by a desire to create work that is expressive and distinctive. My skillset spans across 3D environments, graphic design, illustration, and photo editing, being able to give my work what it needs to leave a lasting impression.</p>
+            <p>If you're interested in me... (o-o )...</p>
           </div>
-
-          <div class="about-card">
-            <div class="about-intro">
-              <p>I'm a digital designer with a multidisciplinary approach, doing what I can to build experiences you can't forget.</p>
-              <p>I am driven by a desire to create work that is expressive and distinctive. My skillset spans across 3D environments, graphic design, illustration, and sound work, being able to give my work what it needs to leave a lasting impression.</p>
-              <p>If you're interested in me... (o-o )...</p>
-            </div>
-            <p class="about-cta-heading">Let's get in touch!</p>
-            <div class="about-actions">
-              <a href="mailto:ysalyssadiaz@gmail.com" class="about-btn">ysalyssadiaz@gmail.com</a>
-              <a href="https://www.linkedin.com/in/alyssa-diaz-12767b3b6" class="about-btn" target="_blank" rel="noopener noreferrer">Linkedin</a>
-            </div>
+          <p class="about-cta">Let's get in touch!</p>
+          <div class="about-actions">
+            <a class="about-btn" href="mailto:ysalyssadiaz@gmail.com">ysalyssadiaz@gmail.com</a>
+            <a class="about-btn" href="https://www.linkedin.com/in/alyssa-diaz-12767b3b6" target="_blank" rel="noopener noreferrer">Linkedin</a>
           </div>
         </div>
       </div>
-    </div>
-  </main>
-
-  <footer class="site-footer" id="footer">
-    <p>&copy; 2026 Alyssa Diaz. All rights reserved.</p>
-  </footer>
-  <script src="js/work-stars.js" defer></script>
-</body>
+    </main>
+    <footer class="site-footer">
+      <p>© 2026 Alyssa Diaz. All rights reserved.</p>
+    </footer>
+  </body>
 </html>

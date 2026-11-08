@@ -1,139 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alyssa Diaz</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap">
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alyssa Diaz</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="stage">
+      <section class="work-panel" aria-labelledby="work-heading">
+        <div class="work-scroll">
+          <div class="work-heading-wrap">
+            <img
+              class="work-heading-star"
+              src="Assets/title-star.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <h2 id="work-heading" class="work-heading">WORK</h2>
+          </div>
 
-<!-- navigation----------------------------->
-<body>
-  <header class="header">
-    <nav class="nav" aria-label="Main">
-      <ul>
-        <li><a href="index.html">Work</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
-  </header>
+          <a class="work-card" href="Work/Compact%27d.html">
+            <div class="work-card-label">
+              <h3>Compact'd <span>- Survival game</span></h3>
+              <p>Push incoming trash back into the landfill.</p>
+            </div>
+            <div class="work-card-media work-card-media--compact">
+              <img src="Assets/work/Compactd.png" alt="Green landfill compactor from Compact'd" />
+            </div>
+          </a>
 
-  <!-- ME! ------------------------------------->
-  <section class="intro-area" id="intro">
-    <div class="intro-decor" aria-hidden="true">
-      <img src="assets/homepage/halftone-circle.png" alt="" class="intro-asset intro-halftone intro-halftone--1">
-      <img src="assets/homepage/halftone-circle.png" alt="" class="intro-asset intro-halftone intro-halftone--2">
-      <img src="assets/homepage/halftone-circle.png" alt="" class="intro-asset intro-halftone intro-halftone--3">
-      <img src="assets/homepage/bigstar.png" alt="" class="intro-asset intro-star intro-star--1">
-      <img src="assets/homepage/bigstar.png" alt="" class="intro-asset intro-star intro-star--2">
+          <a class="work-card" href="Work/Passing%20Through.html">
+            <div class="work-card-label">
+              <h3>Passing Through <span>- Photography</span></h3>
+              <p>Exploring the transitional spaces of Melbourne’s urban landscape.</p>
+            </div>
+            <div class="work-card-media work-card-media--passing">
+              <img src="Assets/work/passingthrough/finals/final4.png" alt="Glass towers and a pedestrian bridge from Passing Through" />
+            </div>
+          </a>
+
+          <a class="work-card" href="Work/Elsewhere.html">
+            <div class="work-card-label">
+              <h3>Elsewhere <span>- 3D virtual environment</span></h3>
+              <p>Finding peace and belonging in solitude.</p>
+            </div>
+            <div class="work-card-media">
+              <img src="Assets/work/elsewhere.png" alt="A quiet 3D landscape from Elsewhere" />
+            </div>
+          </a>
+
+          <a class="work-card" href="Work/Reach%20Up%20for%20the%20Sky.html">
+            <div class="work-card-label">
+              <h3>Reach Up for the Sky <span>- 3D virtual environment</span></h3>
+              <p>A girl's journey of childhood ambition and algorithmic bias.</p>
+            </div>
+            <div class="work-card-media">
+              <img src="Assets/work/reachup.png" alt="City scene from Reach Up for the Sky" />
+            </div>
+          </a>
+
+          <a class="work-card" href="Work/Spark.html">
+            <div class="work-card-label">
+              <h3>Spark <span>- Game concept</span></h3>
+              <p>Love in the age of swipe.</p>
+            </div>
+            <div class="work-card-media work-card-media--spark">
+              <img src="Assets/work/spark.png" alt="Illustrated scene from Spark" />
+            </div>
+          </a>
+
+          <a class="work-card" href="Work/Make%20a%20Mockup.html">
+            <div class="work-card-label">
+              <h3>Make a Mockup <span>- Web game</span></h3>
+              <p>A dress up game before the dress.</p>
+            </div>
+            <div class="work-card-media work-card-media--mockup">
+              <img src="Assets/work/makeamockup.png" alt="Pink dress-up workspace from Make a Mockup" />
+            </div>
+          </a>
+        </div>
+        <div class="work-bar" aria-hidden="true">
+          <span class="work-bar-thumb"></span>
+        </div>
+      </section>
+
+      <section class="hero">
+        <div class="starfield" aria-hidden="true"></div>
+        <main class="home">
+          <h1 class="sr-only">Alyssa Diaz</h1>
+          <div class="logo-wrap">
+            <span class="eye-fill eye-fill-left" aria-hidden="true"></span>
+            <span class="eye-fill eye-fill-right" aria-hidden="true"></span>
+            <img
+              class="eyes"
+              src="Assets/homepage/B_Logoeyes.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="logo"
+              src="Assets/homepage/B_Logo.png"
+              alt="Alyssa Diaz, multimedia designer creating immersive stories"
+            />
+          </div>
+          <nav class="actions" aria-label="Primary">
+            <a class="btn" href="about.html">ABOUT</a>
+          </nav>
+        </main>
+      </section>
     </div>
-
-    <div class="intro-content">
-      <div class="logo-box">
-        <img src="assets/homepage/logo.png" alt="logo" class="logo">
-      </div>
-
-      <div class="intro-text">
-        <p>is a multimedia designer that creates immersive stories!</p>
-      </div>
-    </div>
-  </section>
-  
-    <!-- work section --------------------------------------->
-    <div class="work-section-clip">
-    <section class="work-section" id="work">
-      <div class="work-decor" aria-hidden="true"></div>
-      <div class="work-title-wrapper">
-        <img src="assets/title-star.svg" class="star-icon" alt="" aria-hidden="true">
-        <h2 class="work-title">WORK</h2>
-      </div>
-      <div class="work-grid">
- <!-- project 1 -->
- <a href="works/elsewhere.html" class="project-card">
-    <!-- project label ontop -->
-    <div class="project-info-label">
-      <h3 class="project-title">ELSEWHERE</h3>
-      <p class="project-subtitle">3D VIRTUAL ENVIRONMENT</p>
-      <p class="project-tagline">Finding belonging and peace in solitude.</p>
-    </div>
-    
-    <!-- image container -->
-    <div class="project-image-container">
-      <img src="assets\homepage\elsewhere.png" alt="Elsewhere Project" class="final-render" />
-    </div>
-  </a>
-
-
-        <!-- project  1 end -->
-
-         <!-- project 2 -->
- <a href="works/reachup.html" class="project-card">
-    <!-- project label ontop -->
-    <div class="project-info-label">
-      <h3 class="project-title">REACH UP FOR THE SKY</h3>
-      <p class="project-subtitle">3D VIRTUAL ENVIRONMENT</p>
-      <p class="project-tagline">A girl's journey of childhood ambition and algorithmic bias.</p>
-    </div>
-    
-    <!-- image container -->
-    <div class="project-image-container">
-      <img src="assets\homepage\reachup.png" alt="Reach Up Project" class="final-render" />
-    </div>
-  </a>
-
-
-        <!-- project  2 end -->
-
-                 <!-- project 3 -->
- <a href="works/spark.html" class="project-card">
-  <!-- project label ontop -->
-  <div class="project-info-label">
-    <h3 class="project-title">SPARK</h3>
-    <p class="project-subtitle">GAME CONCEPT</p>
-    <p class="project-tagline">Love in the age of swipe.</p>
-  </div>
-  
-  <!-- image container -->
-  <div
-    class="project-image-container project-image-container--spark"
-    role="img"
-    aria-label="Spark Project"
-  ></div>
-</a>
-
-
-      <!-- project  3 end -->
-
-               <!-- project 4 -->
- <a href="works/makeamockup.html" class="project-card">
-  <!-- project label ontop -->
-  <div class="project-info-label">
-    <h3 class="project-title">MAKE A MOCKUP</h3>
-    <p class="project-subtitle">WEB GAME</p>
-    <p class="project-tagline">A dress up game before the dress.</p>
-  </div>
-  
-  <!-- image container -->
-  <div
-    class="project-image-container project-image-container--makeamockup"
-    role="img"
-    aria-label="Make a Mockup Project"
-  ></div>
-</a>
-
-
-      <!-- project  4 end -->
-
-        
-      </div>
-    </section>
-    </div>
-
-  <!-- footer -->
-  <footer class="site-footer" id="footer">
-    <p>&copy; 2026 Alyssa Diaz. All rights reserved.</p>
-  </footer>
-  <script src="js/work-stars.js" defer></script>
-</body>
+    <footer class="site-footer">
+      <p>© 2026 Alyssa Diaz. All rights reserved.</p>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
 </html>
