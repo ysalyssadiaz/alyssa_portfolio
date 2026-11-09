@@ -191,6 +191,10 @@ body {
   object-position: center 33%;
 }
 
+.work-card-media--aerogard img {
+  object-position: center 13%;
+}
+
 .work-card-label {
   position: absolute;
   z-index: 2;
@@ -718,6 +722,29 @@ body.project-page {
   grid-column: 1 / -1;
 }
 
+.project-gallery-row--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.project-gallery-row--three img {
+  height: auto;
+  object-fit: contain;
+}
+
+.project-posters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.35rem;
+  width: 100%;
+}
+
+.project-posters img {
+  width: min(100%, 820px);
+  height: auto;
+  border-radius: 1.6rem;
+}
+
 @media (max-width: 760px) {
   .project-video,
   .project-gallery,
@@ -734,6 +761,10 @@ body.project-page {
     height: auto;
     max-height: none;
     object-fit: contain;
+  }
+
+  .project-gallery-row--three {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
